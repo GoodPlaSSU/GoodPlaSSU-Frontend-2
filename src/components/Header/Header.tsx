@@ -1,5 +1,14 @@
+import * as M from "./Menus";
+
 const Header = () => {
-    return <>hihi</>;
+    return (
+        <div className="grid">
+            <M.LoginMenu />
+            <M.GoodPostMenu />
+            <M.JoinPostMenu />
+            <M.MyPageMenu />
+        </div>
+    );
 };
 
 export default Header;
