@@ -1,9 +1,14 @@
-import { FaThumbsUp, FaHandPaper, FaUser, FaLock } from "react-icons/fa";
+import {
+    FaRegThumbsUp,
+    FaRegHandPaper,
+    FaRegUser,
+    FaArrowRight,
+} from "react-icons/fa";
 
 export const GoodPostMenu = () => {
     return (
         <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
-            <FaThumbsUp
+            <FaRegThumbsUp
                 className="mx-4 fill-basic group-hover:fill-primary"
                 size="20"
                 color="gray"
@@ -18,7 +23,7 @@ export const GoodPostMenu = () => {
 export const JoinPostMenu = () => {
     return (
         <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
-            <FaHandPaper
+            <FaRegHandPaper
                 className="mx-4 fill-basic group-hover:fill-primary"
                 size="20"
                 color="gray"
@@ -33,7 +38,7 @@ export const JoinPostMenu = () => {
 export const MyPageMenu = () => {
     return (
         <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
-            <FaUser
+            <FaRegUser
                 className="mx-4 fill-basic group-hover:fill-primary"
                 size="20"
                 color="gray"
@@ -48,7 +53,7 @@ export const MyPageMenu = () => {
 export const LoginMenu = () => {
     return (
         <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
-            <FaLock
+            <FaArrowRight
                 className="mx-4 fill-basic group-hover:fill-primary"
                 size="20"
                 color="gray"

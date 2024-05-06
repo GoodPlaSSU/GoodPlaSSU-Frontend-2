@@ -3,7 +3,7 @@ import MyProfile from "./MyProfile";
 
 const Header = () => {
     return (
-        <div className="inline-block w-64 h-screen pt-24 bg-white shadow-lg">
+        <div>
             <MyProfile />
             <M.LoginMenu />
             <M.GoodPostMenu />
