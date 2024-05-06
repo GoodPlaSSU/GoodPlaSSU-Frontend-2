@@ -6,7 +6,7 @@ import JoinPostList from "./pages/JoinPostList";
 import PostWrite from "./pages/PostWrite";
 import PostDetail from "./pages/PostDetail";
 import MyPage from "./pages/MyPage";
-import ContentHeader from "./components/Common/ContentHeader";
+import UserHeader from "./components/Common/UserHeader";
 
 function App() {
     return (
@@ -16,7 +16,7 @@ function App() {
                     <Header />
                 </div>
                 <div className="h-screen flex-grow bg-click">
-                    <ContentHeader />
+                    <UserHeader />
                     <Routes>
                         <Route path="/" element={<GoodPostList />} />
                         <Route path="/join" element={<JoinPostList />} />

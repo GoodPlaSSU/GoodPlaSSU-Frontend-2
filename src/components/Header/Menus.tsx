@@ -13,7 +13,7 @@ export const GoodPostMenu = () => {
                 size="16"
                 color="gray"
             />
-            <p className="text-text group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-semibold group-hover:font-bold text-sm ">
                 선행 게시판
             </p>
         </div>
@@ -28,7 +28,7 @@ export const JoinPostMenu = () => {
                 size="16"
                 color="gray"
             />
-            <p className="text-text group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-semibold group-hover:font-bold text-sm ">
                 참여 게시판
             </p>
         </div>
@@ -43,7 +43,7 @@ export const MyPageMenu = () => {
                 size="16"
                 color="gray"
             />
-            <p className="text-text group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-semibold group-hover:font-bold text-sm ">
                 마이 페이지
             </p>
         </div>
@@ -58,7 +58,7 @@ export const LoginMenu = () => {
                 size="16"
                 color="gray"
             />
-            <p className="text-text group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-semibold group-hover:font-bold text-sm ">
                 로그인
             </p>
         </div>
