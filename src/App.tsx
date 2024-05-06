@@ -1,6 +1,11 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import GoodPostList from "./pages/GoodPostList";
+import { Route, Routes } from "react-router-dom";
+import JoinPostList from "./pages/JoinPostList";
+import PostWrite from "./pages/PostWrite";
+import PostDetail from "./pages/PostDetail";
+import MyPage from "./pages/MyPage";
 
 function App() {
     return (
@@ -10,7 +15,13 @@ function App() {
                     <Header />
                 </div>
                 <div className="h-screen w-72 bg-bg1">
-                    <GoodPostList />
+                    <Routes>
+                        <Route path="/" element={<GoodPostList />} />
+                        <Route path="/join" element={<JoinPostList />} />
+                        <Route path="/write" element={<PostWrite />} />
+                        <Route path="/post/:id" element={<PostDetail />} />
+                        <Route path="/mypage" element={<MyPage />} />
+                    </Routes>
                 </div>
             </div>
         </div>

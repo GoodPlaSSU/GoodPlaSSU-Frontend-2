@@ -1,5 +1,5 @@
 const GoodPostList = () => {
-    return <>hi</>;
+    return <></>;
 };
 
 export default GoodPostList;

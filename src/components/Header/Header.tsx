@@ -1,14 +1,22 @@
 import * as M from "./Menus";
 import MyProfile from "./MyProfile";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
         <div>
             <MyProfile />
             <M.LoginMenu />
-            <M.GoodPostMenu />
-            <M.JoinPostMenu />
-            <M.MyPageMenu />
+            <Link to={"/"}>
+                {" "}
+                <M.GoodPostMenu />
+            </Link>
+            <Link to={"/join"}>
+                <M.JoinPostMenu />
+            </Link>
+            <Link to={"/mypage"}>
+                <M.MyPageMenu />
+            </Link>
         </div>
     );
 };
