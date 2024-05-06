@@ -1,12 +1,5 @@
 const GoodPostList = () => {
-    return (
-        <>
-            
-        </>
-    );
-    
-}
+    return <>hi</>;
+};
 
-
-
-export default GoodPostList
+export default GoodPostList;
