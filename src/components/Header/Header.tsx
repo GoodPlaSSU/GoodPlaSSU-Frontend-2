@@ -3,7 +3,7 @@ import MyProfile from "./MyProfile";
 
 const Header = () => {
     return (
-        <div className="grid w-40 items-center pt-6">
+        <div className="grid w-64 pt-24 items-center justify-center gap-2 bg-white">
             <MyProfile />
             <M.LoginMenu />
             <M.GoodPostMenu />
@@ -12,5 +12,8 @@ const Header = () => {
         </div>
     );
 };
+
+// myprofile 같은 경우는 나중에 img 링크 props로 넘겨줘야 함
+// header는 useEffect로 로그인 되어있는지 확인하고 로그인 되어있으면 Myprofile 띄우고 안되어있으면 loginMenu 띄워야 함!
 
 export default Header;
