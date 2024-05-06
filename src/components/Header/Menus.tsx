@@ -1,19 +1,19 @@
 import {
     FaRegThumbsUp,
-    FaRegHandPaper,
+    FaRegHand,
     FaRegUser,
-    FaArrowRight,
-} from "react-icons/fa";
+    FaArrowRightToBracket,
+} from "react-icons/fa6";
 
 export const GoodPostMenu = () => {
     return (
-        <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
+        <div className="group inline-flex w-[248px] h-[46px] m-2 items-center rounded-lg hover:bg-click">
             <FaRegThumbsUp
-                className="mx-4 fill-basic group-hover:fill-primary"
-                size="20"
+                className="ml-5 mr-2 fill-text group-hover:fill-primary"
+                size="16"
                 color="gray"
             />
-            <p className="text-basic group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-bold text-sm ">
                 선행 게시판
             </p>
         </div>
@@ -22,13 +22,13 @@ export const GoodPostMenu = () => {
 
 export const JoinPostMenu = () => {
     return (
-        <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
-            <FaRegHandPaper
-                className="mx-4 fill-basic group-hover:fill-primary"
-                size="20"
+        <div className="group inline-flex w-[248px] h-[46px] m-2 items-center rounded-lg hover:bg-click">
+            <FaRegHand
+                className="ml-5 mr-2 fill-text group-hover:fill-primary"
+                size="16"
                 color="gray"
             />
-            <p className="text-basic group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-bold text-sm ">
                 참여 게시판
             </p>
         </div>
@@ -37,13 +37,13 @@ export const JoinPostMenu = () => {
 
 export const MyPageMenu = () => {
     return (
-        <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
+        <div className="group inline-flex w-[248px] h-[46px] m-2 items-center rounded-lg hover:bg-click">
             <FaRegUser
-                className="mx-4 fill-basic group-hover:fill-primary"
-                size="20"
+                className="ml-5 mr-2 fill-text group-hover:fill-primary"
+                size="16"
                 color="gray"
             />
-            <p className="text-basic group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-bold text-sm ">
                 마이 페이지
             </p>
         </div>
@@ -52,13 +52,13 @@ export const MyPageMenu = () => {
 
 export const LoginMenu = () => {
     return (
-        <div className="group inline-flex w-48 h-9 m-2 items-center rounded-lg hover:bg-gray-100">
-            <FaArrowRight
-                className="mx-4 fill-basic group-hover:fill-primary"
-                size="20"
+        <div className="group inline-flex w-[248px] h-[46px] m-2 items-center rounded-lg hover:bg-click">
+            <FaArrowRightToBracket
+                className="ml-5 mr-2 fill-text group-hover:fill-primary"
+                size="16"
                 color="gray"
             />
-            <p className="text-basic group-hover:text-primary font-bold text-sm ">
+            <p className="text-text group-hover:text-primary font-bold text-sm ">
                 로그인
             </p>
         </div>

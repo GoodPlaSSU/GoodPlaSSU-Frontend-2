@@ -1,11 +1,14 @@
 import * as M from "./Menus";
-import MyProfile from "./MyProfile";
 import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div>
-            <MyProfile />
+        <div className=" align-top">
+            <img
+                alt="logo"
+                src="/logo1.png"
+                className="inline-flex w-[218px] my-[52px]"
+            />
             <M.LoginMenu />
             <Link to={"/"}>
                 {" "}

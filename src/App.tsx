@@ -11,11 +11,11 @@ import ContentHeader from "./components/Common/ContentHeader";
 function App() {
     return (
         <div className="App">
-            <div className="inline-flex justify-center">
-                <div className="w-64 h-screen bh-white shadow-lg z-10">
+            <div className="flex">
+                <div className=" w-[312px] h-screen bh-white border-r-2">
                     <Header />
                 </div>
-                <div className="h-screen w-[50vw] bg-bg1">
+                <div className="h-screen flex-grow bg-click">
                     <ContentHeader />
                     <Routes>
                         <Route path="/" element={<GoodPostList />} />
