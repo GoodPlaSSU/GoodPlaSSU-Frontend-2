@@ -5,10 +5,10 @@ module.exports = {
         extend: {
             colors: {
                 primary: "#397EDF",
-                bg1: "#DBE5F3",
-                bg2: "#E8EDF3",
-                basic: "#737373",
-                extra: "#d6d6d6",
+                click: "#f1f1f1",
+                icon: "#e7e7e7",
+                text: "#323232",
+                title: "#535353",
             },
         },
     },
