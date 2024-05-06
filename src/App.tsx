@@ -1,4 +1,5 @@
 import "./App.css";
+import ContentHeader from "./components/Common/ContentHeader";
 import Header from "./components/Header/Header";
 import GoodPostList from "./pages/GoodPostList";
 import { Route, Routes } from "react-router-dom";
