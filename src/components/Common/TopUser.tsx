@@ -1,4 +1,4 @@
-import UserProfile from "./UserProfile";
+import UserPointProfile from "./UserPointProfile";
 
 interface UserInfo {
     name: String;
@@ -18,10 +18,10 @@ const TopUser = () => {
             <div className="mt-6 mb-3 pl-6 text-sm font-semibold text-primary text-start">
                 이 달의 선행왕
             </div>
-            <UserProfile />
-            <UserProfile />
-            <UserProfile />
-            <UserProfile />
+            <UserPointProfile />
+            <UserPointProfile />
+            <UserPointProfile />
+            <UserPointProfile />
         </div>
     );
 };
