@@ -1,15 +1,10 @@
-import UserPointProfile from "./UserPointProfile";
+import UserPointProfile, { UserPointInfo } from "./UserPointProfile";
 
-interface UserInfo {
-    name: String;
-    point: Number;
-    profile: String;
-}
-const example: UserInfo[] = [
-    { name: "Minji Kim", point: 243, profile: "" },
-    { name: "Minji Kim", point: 243, profile: "" },
-    { name: "Minji Kim", point: 243, profile: "" },
-    { name: "Minji Kim", point: 243, profile: "" },
+const example: UserPointInfo[] = [
+    { name: "Minji Kim", point: 1231, profile: "" },
+    { name: "Hyein Lee", point: 456, profile: "" },
+    { name: "Haerin Kang", point: 234, profile: "" },
+    { name: "Daniel", point: 123, profile: "" },
 ];
 
 const TopUser = () => {
@@ -18,10 +13,9 @@ const TopUser = () => {
             <div className="mt-6 mb-3 pl-6 text-sm font-semibold text-primary text-start">
                 이 달의 선행왕
             </div>
-            <UserPointProfile />
-            <UserPointProfile />
-            <UserPointProfile />
-            <UserPointProfile />
+            {example.map((userinfo) => (
+                <UserPointProfile userinfo={userinfo} />
+            ))}
         </div>
     );
 };
