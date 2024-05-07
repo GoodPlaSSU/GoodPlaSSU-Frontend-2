@@ -18,15 +18,23 @@ function App() {
                 </div>
                 <div className="h-screen flex-grow bg-click">
                     <UserHeader />
-                    <div className="flex">
-                        <Routes>
-                            <Route path="/" element={<GoodPostList />} />
-                            <Route path="/join" element={<JoinPostList />} />
-                            <Route path="/write" element={<PostWrite />} />
-                            <Route path="/post/:id" element={<PostDetail />} />
-                            <Route path="/mypage" element={<MyPage />} />
-                        </Routes>
-                        <div>
+                    <div className="flex mt-7">
+                        <div className="flex-grow mx-7">
+                            <Routes>
+                                <Route path="/" element={<GoodPostList />} />
+                                <Route
+                                    path="/join"
+                                    element={<JoinPostList />}
+                                />
+                                <Route path="/write" element={<PostWrite />} />
+                                <Route
+                                    path="/post/:id"
+                                    element={<PostDetail />}
+                                />
+                                <Route path="/mypage" element={<MyPage />} />
+                            </Routes>
+                        </div>
+                        <div className="mr-7">
                             <TopUser />
                         </div>
                     </div>

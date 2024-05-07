@@ -1,5 +1,5 @@
 const GoodPostList = () => {
-    return <></>;
+    return <>hihfsidhfisdhf</>;
 };
 
 export default GoodPostList;
