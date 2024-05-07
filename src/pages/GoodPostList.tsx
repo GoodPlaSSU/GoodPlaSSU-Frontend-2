@@ -1,5 +1,11 @@
+import GoodPost from "../components/GoodPostList/GoodPost";
+
 const GoodPostList = () => {
-    return <>hihfsidhfisdhf</>;
+    return (
+        <>
+            <GoodPost />
+        </>
+    );
 };
 
 export default GoodPostList;
