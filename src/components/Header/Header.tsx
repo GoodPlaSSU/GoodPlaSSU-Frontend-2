@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-        <div className=" align-top">
+        <div className="align-top">
             <img
                 alt="logo"
                 src="/logo1.png"

@@ -2,8 +2,8 @@ import { FaUserCircle } from "react-icons/fa";
 
 const UserHeader = () => {
     return (
-        <div className="flex h-20 items-center justify-end bg-white border-b-2 text-sm font-semibold text-text">
-            <span className="mr-2">
+        <div className="flex h-20 items-center justify-end bg-white border-b-[1px] text-sm font-semibold text-text">
+            <span className="mr-4">
                 <FaUserCircle className="fill-icon" size="36" />
             </span>
             <span>김민지</span>
