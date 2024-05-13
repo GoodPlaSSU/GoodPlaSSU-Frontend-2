@@ -2,6 +2,7 @@ import CommentIcon from "../Common/CommentIcon";
 import LikeIcon from "../Common/LikeIcon";
 import PostProfile from "../Common/PostProfile";
 
+
 const GoodPost = () => {
     return (
         <div className="p-6 border-b-[1px]">

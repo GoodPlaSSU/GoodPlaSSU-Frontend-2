@@ -13,8 +13,8 @@ const TopUser = () => {
             <div className="mt-6 mb-3 pl-6 text-sm font-semibold text-primary text-start">
                 이 달의 선행왕
             </div>
-            {example.map((userinfo) => (
-                <UserPointProfile userinfo={userinfo} />
+            {example.map((userinfo, index) => (
+                <UserPointProfile key={index} userinfo={userinfo} />
             ))}
         </div>
     );

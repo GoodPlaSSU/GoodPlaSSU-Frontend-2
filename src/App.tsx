@@ -16,7 +16,7 @@ function App() {
                 <div className=" w-[312px] h-screen bh-white border-r-[1px]">
                     <Header />
                 </div>
-                <div className="h-screen flex-grow bg-click">
+                <div className="h-screen flex-1 bg-click">
                     <UserHeader />
                     <div className="flex mt-7">
                         <div className="flex-grow mx-7">
