@@ -4,6 +4,17 @@ import { useInView } from "react-intersection-observer";
 import { useQuery } from "@tanstack/react-query";
 import { getGoodPostList } from "../api/goodPostList";
 
+type Data = {
+    id: number;
+    writer_profile: string;
+    writer_name: string;
+    content: string;
+    thumbnail: string;
+    like_on: boolean;
+    like_count: number;
+    updated_date: string;
+};
+
 const GoodPostList = () => {
     const { ref, inView } = useInView({
         /* Optional options */
@@ -19,17 +30,6 @@ const GoodPostList = () => {
             return getGoodPostList(1);
         },
     });
-
-    type Data = {
-        id: number;
-        writer_profile: string;
-        writer_name: string;
-        content: string;
-        thumbnail: string;
-        like_on: boolean;
-        like_count: number;
-        updated_date: string;
-    };
 
     useEffect(() => {
         if (inView) {
@@ -47,6 +47,7 @@ const GoodPostList = () => {
                             profile={e.writer_profile}
                             content={e.content}
                             like={e.like_count}
+                            isOn={e.like_on}
                         />
                     </div>
                 ))}

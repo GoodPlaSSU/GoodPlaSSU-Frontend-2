@@ -7,15 +7,16 @@ type goodPostType = {
     profile: string;
     content: string;
     like: number;
+    isOn: boolean;
 };
 
-const GoodPost = ({ name, profile, content, like }: goodPostType) => {
+const GoodPost = ({ name, profile, content, like, isOn }: goodPostType) => {
     return (
         <div className="p-6 border-b-[1px]">
             <PostProfile url={profile} name={name} />
             <div className="my-4 text-left">{content}</div>
             <div className="flex gap-4">
-                <LikeIcon />
+                <LikeIcon isOn={isOn} count={like} />
                 <CommentIcon />
             </div>
         </div>
