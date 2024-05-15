@@ -3,6 +3,7 @@ import GoodPost from "../components/GoodPostList/GoodPost";
 import { useInView } from "react-intersection-observer";
 import { useQuery } from "@tanstack/react-query";
 import { getGoodPostList } from "../api/goodPostList";
+import { useNavigate } from "react-router-dom";
 
 type Data = {
     id: number;
@@ -16,12 +17,13 @@ type Data = {
 };
 
 const GoodPostList = () => {
+    const navigate = useNavigate();
+
     const { ref, inView } = useInView({
         /* Optional options */
         threshold: 0.7,
     });
 
-    const [postList, setPostList] = useState([]);
     let page = useRef(0);
 
     const { isLoading, data } = useQuery<Data[]>({
@@ -31,6 +33,10 @@ const GoodPostList = () => {
         },
     });
 
+    const onPostClick = (id: number) => {
+        navigate(`/post/${id}`);
+    };
+
     useEffect(() => {
         if (inView) {
             page.current++;
@@ -38,10 +44,10 @@ const GoodPostList = () => {
     }, [inView]);
 
     return (
-        <div className=" h-[calc(100vh-136px)] mb-7 overflow-scroll rounded-lg border-[1px] bg-white">
+        <div>
             {!isLoading &&
                 data?.map((e, i) => (
-                    <div key={i}>
+                    <div key={i} onClick={() => onPostClick(e.id)}>
                         <GoodPost
                             name={e.writer_name}
                             profile={e.writer_profile}
