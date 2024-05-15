@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import GoodPost from "../components/GoodPostList/GoodPost";
 import { useInView } from "react-intersection-observer";
+import { useQuery } from "@tanstack/react-query";
+import { getGoodPostList } from "../api/goodPostList";
 
 const GoodPostList = () => {
     const { ref, inView } = useInView({
@@ -8,28 +10,19 @@ const GoodPostList = () => {
         threshold: 0.7,
     });
 
-    const [postList, setPostList] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    const [postList, setPostList] = useState([]);
     let page = useRef(0);
+
+    const { data } = useQuery({
+        queryKey: ["goodPostList"],
+        queryFn: () => {
+            return getGoodPostList(1);
+        },
+    });
 
     useEffect(() => {
         if (inView) {
             page.current++;
-            setPostList([
-                ...postList,
-                ...[
-                    1 + 10 * page.current,
-                    2 + 10 * page.current,
-                    3 + 10 * page.current,
-                    4 + 10 * page.current,
-                    5 + 10 * page.current,
-                    6 + 10 * page.current,
-                    7 + 10 * page.current,
-                    8 + 10 * page.current,
-                    9 + 10 * page.current,
-                    10 + 10 * page.current,
-                ],
-            ]);
-            console.log(page.current);
         }
     }, [inView]);
 
@@ -38,7 +31,6 @@ const GoodPostList = () => {
             {postList.map((e, i) => (
                 <div key={i}>
                     <GoodPost />
-                    <div>{e}</div>
                 </div>
             ))}
             <div ref={ref}></div>
