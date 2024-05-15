@@ -5,5 +5,5 @@ export const getGoodPostList = async (page: number) => {
         params: { tag: 0, page: page },
     });
     console.log(response.data.data.content);
-    return response.data.data;
+    return response.data.data.content;
 };
