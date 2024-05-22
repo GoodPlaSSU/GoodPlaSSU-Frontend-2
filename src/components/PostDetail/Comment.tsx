@@ -1,15 +1,15 @@
-import ProfileImage from "./ProfileImage";
+import ProfileImage from "../Common/ProfileImage";
 
 type CommentType = {
-    profile: string,
-    name: string,
-    date: string,
-    content: string
-}
+    profile: string;
+    name: string;
+    date: string;
+    content: string;
+};
 
-const Comment = ({profile, name, date, content}: CommentType) => {
+const Comment = ({ profile, name, date, content }: CommentType) => {
     return (
-        <div className="p-3 bg-[#f5f5f5] rounded-xl">
+        <div className="p-3 bg-[#f5f5f5] rounded-xl my-3">
             <div className="flex items-center">
                 <ProfileImage url={profile} size="20" />
                 <div>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import GoodPost from "../components/GoodPostList/GoodPost";
 import { useInView } from "react-intersection-observer";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { getGoodPostList } from "../api/goodPostList";
 import { useNavigate } from "react-router-dom";
 
@@ -24,12 +24,12 @@ const GoodPostList = () => {
         threshold: 0.7,
     });
 
-    let page = useRef(0);
+    const [page, setPage] = useState(0);
 
     const { isLoading, data } = useQuery<Data[]>({
         queryKey: ["goodPostList"],
         queryFn: () => {
-            return getGoodPostList(1);
+            return getGoodPostList(page);
         },
     });
 
@@ -39,7 +39,7 @@ const GoodPostList = () => {
 
     useEffect(() => {
         if (inView) {
-            page.current++;
+            setPage(page + 1);
         }
     }, [inView]);
 
