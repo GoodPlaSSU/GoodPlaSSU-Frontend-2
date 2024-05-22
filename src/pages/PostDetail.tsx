@@ -5,6 +5,7 @@ import { getPostDetail } from "../api/PostDetail";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import CommentWrite from "../components/Common/CommentWrite";
 
 type Data = {
     id: number;
@@ -55,6 +56,7 @@ const PostDetail = () => {
                         />
                     ))}
             </div>
+            <CommentWrite />
         </div>
     );
 };

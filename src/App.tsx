@@ -1,9 +1,10 @@
 import "./App.css";
 import Header from "./components/Header/Header";
 import UserHeader from "./components/Common/UserHeader";
-import TopUser from "./components/Common/TopUser";
+import TotalTopUser from "./components/Common/TotalTopUser";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import PageRoute from "./components/Common/PageRoute";
+import MonthTopUser from "./components/Common/MonthTopUser";
 
 function App() {
     const queryClient = new QueryClient();
@@ -20,7 +21,10 @@ function App() {
                             <div className="h-[calc(100vh-136px)] mb-7 mx-7 overflow-scroll rounded-lg border-[1px] bg-white flex-grow">
                                 <PageRoute />
                             </div>
-                            <TopUser />
+                            <div className="flex flex-col gap-6">
+                                <TotalTopUser />
+                                <MonthTopUser />
+                            </div>
                         </div>
                     </div>
                 </div>
