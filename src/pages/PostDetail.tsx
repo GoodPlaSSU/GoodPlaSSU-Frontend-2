@@ -36,7 +36,7 @@ const PostDetail = () => {
     });
 
     return (
-        <div className="h-full w-full overflow-scroll" ref={detailRef}>
+        <div className="h-full w-full overflow-scroll p-6" ref={detailRef}>
                 <div className="mb-6">
                     <div className="flex items-center">
                         <PostProfile url={""} name={""} />

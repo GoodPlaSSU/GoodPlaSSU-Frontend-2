@@ -18,7 +18,7 @@ function App() {
                     <div className="h-screen flex-1 bg-click">
                         <UserHeader />
                         <div className="flex mt-7">
-                            <div className="h-[calc(100vh-136px)] mb-7 mx-7 p-6 rounded-lg border-[1px] bg-white flex-grow">
+                            <div className="h-[calc(100vh-136px)] mb-7 mx-7 rounded-lg border-[1px] bg-white flex-grow">
                                 <PageRoute />
                             </div>
                             <div className="h-[calc(100vh-136px)] rounded-lg flex flex-col gap-6 overflow-scroll">

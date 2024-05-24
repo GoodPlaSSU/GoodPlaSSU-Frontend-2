@@ -14,6 +14,7 @@ type Data = {
     like_on: boolean;
     like_count: number;
     updated_date: string;
+    comment_count: number;
 };
 
 const GoodPostList = () => {
@@ -50,10 +51,11 @@ const GoodPostList = () => {
                     <div key={i} onClick={() => onPostClick(e.id)}>
                         <GoodPost
                             name={e.writer_name}
-                            profile={e.writer_profile}
+                            profile={''}
                             content={e.content}
                             like={e.like_count}
                             isOn={e.like_on}
+                            comment={e.comment_count}
                         />
                     </div>
                 ))}
