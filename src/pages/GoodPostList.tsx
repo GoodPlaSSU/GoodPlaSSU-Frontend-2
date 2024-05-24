@@ -44,7 +44,7 @@ const GoodPostList = () => {
     }, [inView]);
 
     return (
-        <div>
+        <div className="h-full w-full overflow-scroll">
             {!isLoading &&
                 data?.map((e, i) => (
                     <div key={i} onClick={() => onPostClick(e.id)}>
