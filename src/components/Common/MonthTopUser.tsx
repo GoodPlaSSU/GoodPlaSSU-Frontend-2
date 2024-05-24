@@ -1,20 +1,32 @@
-import UserPointProfile, { UserPointInfo } from "./UserPointProfile";
+import { useQuery } from "@tanstack/react-query";
+import UserPointProfile from "./UserPointProfile";
+import { getMonthTopUser } from "../../api/TopUser";
 
-const example: UserPointInfo[] = [
-    { name: "Minji Kim", point: 1231, profile: "" },
-    { name: "Hyein Lee", point: 456, profile: "" },
-    { name: "Haerin Kang", point: 234, profile: "" },
-    { name: "Daniel", point: 123, profile: "" },
-];
+type TopUserType = {
+    month_point: number;
+    writer_name: string;
+    writer_profile: string;
+};
 
 const MonthTopUser = () => {
+    const { isLoading, data } = useQuery<TopUserType[]>({
+        queryKey: ["monthTopUser"],
+        queryFn: () => {
+            return getMonthTopUser();
+        },
+    });
     return (
-        <div className="w-60 h-80 mr-7 bg-white border-[1px] rounded-lg">
+        <div className="w-60 h-80 mr-7 pb-2 bg-white border-[1px] rounded-lg">
             <div className="mt-6 mb-3 pl-6 text-sm font-semibold text-primary text-start">
                 이 달의 선행왕
             </div>
-            {example.map((userinfo, index) => (
-                <UserPointProfile key={index} userinfo={userinfo} />
+            {data?.map((e, i) => (
+                <UserPointProfile
+                    key={i}
+                    name={e.writer_name}
+                    profile={""}
+                    point={e.month_point}
+                />
             ))}
         </div>
     );
