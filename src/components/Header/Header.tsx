@@ -21,6 +21,9 @@ const Header = () => {
             <Link to={"/mypage"}>
                 <M.MyPageMenu />
             </Link>
+            <Link to={'/write'} >
+                <M.WriteMenu />
+            </Link>
         </div>
     );
 };

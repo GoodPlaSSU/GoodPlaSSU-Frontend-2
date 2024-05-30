@@ -3,6 +3,7 @@ import {
     FaRegHand,
     FaRegUser,
     FaArrowRightToBracket,
+    FaPenToSquare,
 } from "react-icons/fa6";
 
 export const GoodPostMenu = () => {
@@ -60,6 +61,21 @@ export const LoginMenu = () => {
             />
             <p className="text-text group-hover:text-primary font-semibold group-hover:font-bold text-sm ">
                 로그인
+            </p>
+        </div>
+    );
+};
+
+export const WriteMenu = () => {
+    return (
+        <div className="group inline-flex w-[248px] h-[46px] m-2 items-center rounded-lg bg-primary">
+            <FaPenToSquare
+                className="ml-5 mr-2 fill-white"
+                size="16"
+                color="gray"
+            />
+            <p className="text-white font-semibold group-hover:font-bold text-sm ">
+                글 작성하기
             </p>
         </div>
     );
