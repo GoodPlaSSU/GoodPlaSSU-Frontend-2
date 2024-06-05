@@ -15,16 +15,19 @@ const LikeIcon = ({ isOn, count }: LikeType) => {
                 <FaHeart
                     className="fill-red-500"
                     size="20"
-                    onClick={() => setLike(false)}
+                    onClick={(e) => {
+                        setLike(false);
+                        e.stopPropagation();
+                    }}
                 />
             ) : (
                 <FaRegHeart
                     className=" fill-icon"
                     size="20"
-                    onClick={() => setLike(true)}
+                    onClick={(e) => {setLike(true); e.stopPropagation();}}
                 />
             )}
-            <span className="ml-2 text-text text-sm">{count}</span>
+            <span className="ml-2 text-sm text-text">{count}</span>
         </div>
     );
 };
