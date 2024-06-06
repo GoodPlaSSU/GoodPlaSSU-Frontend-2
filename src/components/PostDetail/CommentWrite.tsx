@@ -1,4 +1,4 @@
-import { MutableRefObject, RefObject, useRef, useState } from "react";
+import {  useRef, useState } from "react";
 import ProfileImage from "../Common/ProfileImage";
 
 const CommentWrite = ({scrollHandler}:{scrollHandler: () => void}) => {
@@ -16,9 +16,9 @@ const CommentWrite = ({scrollHandler}:{scrollHandler: () => void}) => {
     };
 
     return (
-        <div className="bg-white mt-6 flex gap-3">
+        <div className="flex gap-3 mt-6 bg-white">
             <ProfileImage url="" size="24" />
-            <div className="flex flex-col border-2 border-primary rounded-xl w-full p-3">
+            <div className="flex flex-col w-full p-3 border-2 border-primary rounded-xl">
                 <textarea
                     className="w-full overflow-hidden align-top outline-none resize-none "
                     placeholder="댓글을 입력하세요."
@@ -29,7 +29,7 @@ const CommentWrite = ({scrollHandler}:{scrollHandler: () => void}) => {
                     }}
                 />
                 <div className="flex">
-                    <button className="bg-primary text-white ml-auto px-2 py-1 rounded-lg">
+                    <button className="px-2 py-1 ml-auto text-white rounded-lg bg-primary">
                         등록
                     </button>
                 </div>

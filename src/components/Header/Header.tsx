@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     return (
-
         <div className="align-top">
             <img
                 alt="logo"
                 src="/logo1.png"
                 className="inline-flex w-[218px] my-[52px]"
             />
-            <M.LoginMenu />
+            <Link to={"/login"}>
+                <M.LoginMenu />
+            </Link>
             <Link to={"/"}>
-                {" "}
-                <M.GoodPostMenu /> 
+                <M.GoodPostMenu />
             </Link>
             <Link to={"/join"}>
                 <M.JoinPostMenu />
@@ -21,7 +21,7 @@ const Header = () => {
             <Link to={"/mypage"}>
                 <M.MyPageMenu />
             </Link>
-            <Link to={'/write'} >
+            <Link to={"/write"}>
                 <M.WriteMenu />
             </Link>
         </div>

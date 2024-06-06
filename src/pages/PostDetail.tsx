@@ -3,7 +3,7 @@ import LikeIcon from "../components/Common/LikeIcon";
 import PostProfile from "../components/Common/PostProfile";
 import { getPostDetail } from "../api/PostDetail";
 import { useParams } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useQuery } from "@tanstack/react-query";
 import CommentWrite from "../components/PostDetail/CommentWrite";
 
@@ -36,7 +36,7 @@ const PostDetail = () => {
     });
 
     return (
-        <div className="h-full w-full overflow-scroll p-6" ref={detailRef}>
+        <div className="w-full h-full p-6 overflow-scroll" ref={detailRef}>
                 <div className="mb-6">
                     <div className="flex items-center">
                         <PostProfile url={""} name={""} />
@@ -48,7 +48,7 @@ const PostDetail = () => {
                     <LikeIcon isOn={false} count={0} />
                 </div>
                 <div>
-                    <div className="mb-4 text-left font-semibold text-primary">
+                    <div className="mb-4 font-semibold text-left text-primary">
                         {"comment"}
                     </div>
                     {!isLoading &&
