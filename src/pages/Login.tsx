@@ -1,3 +1,5 @@
+import { GoogleLogin } from "@react-oauth/google";
+
 const Login = () => {
     return (
         <>
@@ -11,6 +13,17 @@ const Login = () => {
             </div>
             <div className="mt-1 font-medium text-bold">
                 {`GoodPlaSSU에 오신걸 환영합니다!`}
+            </div>
+            <div className="inline-flex mt-10">
+                <GoogleLogin
+                    onSuccess={(credentialResponse) => {
+                        console.log(credentialResponse);
+                    }}
+                    onError={() => {
+                        console.log("Login Failed");
+                    }}
+                    useOneTap
+                />
             </div>
         </>
     );
