@@ -22,8 +22,6 @@ type Data = {
 const PostDetail = () => {
     const param = useParams();
 
-    const comments = [0, 0, 0, 0, 0, 0];
-
     const detailRef = useRef<any>(null);
 
     const scrollToBottom = () => {
@@ -38,33 +36,38 @@ const PostDetail = () => {
     });
 
     return (
-        <div className="w-full h-full overflow-scroll" ref={detailRef}>
-                <div className="mb-6">
-                    <div className="flex items-center">
-                        <PostProfile url={""} name={""} />
-                        <span className="ml-auto text-xs text-title">
-                            {"data!.updated_at.substring(0, 10)"}
-                        </span>
-                    </div>
-                    <div className="my-4 text-left">{"sdfdsfdsfsdfs"}</div>
-                    <LikeIcon isOn={false} count={0} />
+        <div className="w-full h-full p-6 overflow-scroll" ref={detailRef}>
+            <div className="mb-6">
+                <div className="flex items-center">
+                    <PostProfile
+                        url={""}
+                        name={data ? data!.writer_name : ""}
+                    />
+                    <span className="ml-auto text-xs text-title">
+                        {"data!.updated_at.substring(0, 10)"}
+                    </span>
                 </div>
-                <div>
-                    <div className="mb-4 font-semibold text-left text-primary">
-                        {"comment"}
-                    </div>
-                    {!isPending &&
-                        comments.map((e, i) => (
-                            <Comment
-                                key={i}
-                                profile=""
-                                name="Minji Kim"
-                                date="2024.10.27"
-                                content="sfsdf"
-                            />
-                        ))}
+                <div className="my-4 text-left">
+                    {data ? data!.content : ""}
                 </div>
-            <CommentWrite scrollHandler={scrollToBottom} />
+                <LikeIcon isOn={false} count={data ? data!.like_count : 0} />
+            </div>
+            <div>
+                <div className="mb-4 font-semibold text-left text-primary">
+                    {"comment"}
+                </div>
+                {!isPending &&
+                    data?.comments.map((e, i) => (
+                        <Comment
+                            key={i}
+                            profile=""
+                            name="Minji Kim"
+                            date="2024.10.27"
+                            content="sfsdf"
+                        />
+                    ))}
+            </div>
+            <CommentWrite scrollHandler={scrollToBottom} postid={param.id?? ''} />
         </div>
     );
 };
