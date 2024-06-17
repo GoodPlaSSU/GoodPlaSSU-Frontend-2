@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import ProfileImage from "../Common/ProfileImage";
-import { postComment } from "../../api/PostDetail";
+import { writeComment } from "../../api/PostDetail";
 
 const CommentWrite = ({
     scrollHandler,
@@ -23,7 +23,7 @@ const CommentWrite = ({
     };
 
     const clickHandler = () => {
-        postComment({ id: Number(postid), content: comment });
+        writeComment({ id: Number(postid), content: comment });
     };
 
     return (

@@ -67,7 +67,10 @@ const PostDetail = () => {
                         />
                     ))}
             </div>
-            <CommentWrite scrollHandler={scrollToBottom} postid={param.id?? ''} />
+            <CommentWrite
+                scrollHandler={scrollToBottom}
+                postid={param.id ?? ""}
+            />
         </div>
     );
 };

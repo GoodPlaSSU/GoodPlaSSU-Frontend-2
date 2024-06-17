@@ -6,7 +6,7 @@ export const getPostDetail = async (id: string) => {
     return response.data.data;
 };
 
-export const postComment = async ({
+export const writeComment = async ({
     id,
     content,
 }: {
@@ -22,6 +22,34 @@ export const postComment = async ({
             console.log(response);
         })
         .catch(function (error) {
+            console.log(error);
+        });
+};
+
+export const writeGoodPost = async (content: string) => {
+    axiosInstance
+        .post("/boards/", {
+            content: { content },
+            tag: 0,
+        })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};
+
+export const writeJoinPost = async (content: string) => {
+    axiosInstance
+        .post("/boards/", {
+            content: { content },
+            tag: 1,
+        })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((error) => {
             console.log(error);
         });
 };

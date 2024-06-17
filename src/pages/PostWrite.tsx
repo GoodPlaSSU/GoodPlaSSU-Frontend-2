@@ -1,6 +1,7 @@
 import { FaRegImage, FaXmark } from "react-icons/fa6";
 import PostProfile from "../components/Common/PostProfile";
 import { useRef, useState } from "react";
+import { writeGoodPost, writeJoinPost } from "../api/PostDetail";
 
 const PostWrite = () => {
     const writeRef = useRef<any>(null);
@@ -9,7 +10,7 @@ const PostWrite = () => {
 
     const [imageFiles, setImageFiles] = useState<string[]>([]);
 
-    const [selectedPost, setSelectedPost] = useState("goodpost");
+    const [postType, setPostType] = useState(0);
 
     const [content, setContent] = useState("");
 
@@ -19,6 +20,22 @@ const PostWrite = () => {
             contentRef.current.style.height = `auto`;
             contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;
             writeRef.current.scrollTop = writeRef.current.scrollHeight;
+        }
+    };
+
+    const clickHandler = () => {
+        if (postType === 0) {
+            writeGoodPost(content);
+        } else {
+            writeJoinPost(content);
+        }
+    };
+
+    const postTypeHandler = (post: number) => {
+        if (post === 0) {
+            setPostType(0);
+        } else {
+            setPostType(1);
         }
     };
 
@@ -37,14 +54,6 @@ const PostWrite = () => {
 
     const removeImageFile = (idx: number) => {
         setImageFiles(imageFiles.filter((e, i) => i !== idx));
-    };
-
-    const selectPostHandler = (post: string) => {
-        if (post === "goodpost") {
-            setSelectedPost("goodpost");
-        } else {
-            setSelectedPost("joinpost");
-        }
     };
 
     return (
@@ -71,19 +80,17 @@ const PostWrite = () => {
                 <div className="inline-flex gap-1 p-1 bg-white rounded-full drop-shadow-lg">
                     <span
                         className={`px-3 py-1 rounded-full ${
-                            selectedPost === "goodpost"
-                                ? "bg-primary text-white"
-                                : "text-title"
+                            !postType ? "bg-primary text-white" : "text-title"
                         }`}
+                        onClick={() => postTypeHandler(0)}
                     >
                         선행 게시판
                     </span>
                     <span
                         className={`px-3 py-1 rounded-full ${
-                            selectedPost === "joinpost"
-                                ? "bg-primary text-white"
-                                : "text-title"
+                            postType ? "bg-primary text-white" : "text-title"
                         }`}
+                        onClick={() => postTypeHandler(1)}
                     >
                         참여 게시판
                     </span>
@@ -119,7 +126,10 @@ const PostWrite = () => {
                     </div>
                 ))}
                 <div>
-                    <div className="inline-flex px-3 py-1 mt-3 text-white rounded-full bg-primary">
+                    <div
+                        className="inline-flex px-3 py-1 mt-3 text-white rounded-full bg-primary"
+                        onClick={() => clickHandler()}
+                    >
                         게시
                     </div>
                 </div>
