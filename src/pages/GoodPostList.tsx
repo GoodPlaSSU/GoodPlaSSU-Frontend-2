@@ -45,13 +45,14 @@ const GoodPostList = () => {
     }, [inView]);
 
     return (
-        <div className="h-full w-full overflow-scroll">
+        <div className="w-full h-full overflow-scroll">
             {!isLoading &&
                 data?.map((e, i) => (
                     <div key={i} onClick={() => onPostClick(e.id)}>
                         <GoodPost
+                            id={e.id}
                             name={e.writer_name}
-                            profile={''}
+                            profile={""}
                             content={e.content}
                             like={e.like_count}
                             isOn={e.like_on}

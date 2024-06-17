@@ -1,13 +1,20 @@
 import { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa6";
+import { postLike } from "../../api/PostDetail";
 
 type LikeType = {
     isOn: boolean;
     count: number;
+    postId: number;
 };
 
-const LikeIcon = ({ isOn, count }: LikeType) => {
+const LikeIcon = ({ isOn, count, postId }: LikeType) => {
     const [like, setLike] = useState(isOn);
+
+    const clickHandler = () => {
+        setLike((prev) => !prev);
+        postLike(postId);
+    };
 
     return (
         <div className="flex items-center bg-white">
@@ -16,7 +23,7 @@ const LikeIcon = ({ isOn, count }: LikeType) => {
                     className="fill-red-500"
                     size="20"
                     onClick={(e) => {
-                        setLike(false);
+                        clickHandler();
                         e.stopPropagation();
                     }}
                 />
@@ -24,7 +31,10 @@ const LikeIcon = ({ isOn, count }: LikeType) => {
                 <FaRegHeart
                     className=" fill-icon"
                     size="20"
-                    onClick={(e) => {setLike(true); e.stopPropagation();}}
+                    onClick={(e) => {
+                        clickHandler();
+                        e.stopPropagation();
+                    }}
                 />
             )}
             <span className="ml-2 text-sm text-text">{count}</span>

@@ -53,3 +53,16 @@ export const writeJoinPost = async (content: string) => {
             console.log(error);
         });
 };
+
+export const postLike = async (postid: number) => {
+    axiosInstance
+        .post(`/cheers/${postid}`, {
+            postId: { postid },
+        })
+        .then((res) => {
+            console.log(res);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+};

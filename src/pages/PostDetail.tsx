@@ -50,7 +50,11 @@ const PostDetail = () => {
                 <div className="my-4 text-left">
                     {data ? data!.content : ""}
                 </div>
-                <LikeIcon isOn={false} count={data ? data!.like_count : 0} />
+                <LikeIcon
+                    isOn={false}
+                    count={data ? data!.like_count : 0}
+                    postId={Number(param.id ?? 0)}
+                />
             </div>
             <div>
                 <div className="mb-4 font-semibold text-left text-primary">
